@@ -1,1 +1,30 @@
+1. What is getdata() and putdata() 
+answer: This is a member function. It gets the input from the user: the name, age, and the marks of the student in subjects. 
+And putdata basicallt display it. should print the name, age, sum of the marks and the cur_id of the student.
+
+
+2. What is reduce() ??
+Answer: It combines the elements of a sequence into one value. 
+
+
+3. What is a=10 ?
+Answer: a is basically a variable whereas 10 will be store in memory. And both together a=10 is a identifier.
+
+
+4. Some Identifier Points-
+Answer: a) It can consist of alphabets, digits and underscore.
+        b) It must not start with digit.
+        c) C++ is case sensitive.
+        d) It should not be a reserved word.
+        
+
+5. what is :: in c++ ?
+Answer: This is a scope resolution operator. When we will declare a class method outside of the class.
+
+
+6. Say this in C++ language. class C : protected A 
+Answer: Class is inherited from class A. Where class A is protected and it is called parent class and class C is called child class.
+
+7. What is set and get will do ??
+Answer: set_data will access the input (even though they are public, protected or private) whereas get_data will access the output. 
 
