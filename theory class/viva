@@ -28,3 +28,25 @@ Answer: Class is inherited from class A. Where class A is protected and it is ca
 7. What is set and get will do ??
 Answer: set_data will access the input (even though they are public, protected or private) whereas get_data will access the output. 
 
+
+8. What is the importance of *friend* function in C++ if it can access the private members of a class? Where is the data security here?
+
+Answer: The purpose of access control in C++ is not to promote security, in the sense of protecting ourselves from malicious software 
+developers, (after all a malicious developer can just change a private data member to public, and/or deliberately write buggy code) but
+rather to promote bug avoidance by helping us to protect ourselves from ourselves, and our well meaning colleagues.
+When I declare a class data member as private, I am telling all of my colleagues, and my future self, to not read 
+or change that data member, while using instances of that class. Only developers who are intimately familiar with 
+the implementation of the class in which that data member is defined should dare to read it's value or change it.
+If I wrote the class, 5 years ago, and have forgotton the design long ago, these are things I know to refrain from 
+changing unless I am wiling to dive into the nitty gritty and refresh my memory regarding why various design 
+decisions that motivated the implementation were made.When I use the friend key word, I am documenting my design decision,
+that several classes which are all part of the same subsystem, should have access to each other's innards, like for example
+, allowing two components under the hood of my car to affect each other, but absolutely not wanting a button on my dashboard
+that I or my dog could accidentally press to inadvertently alter the operations of those compontents. Why not at least allow
+read permissions ? So that other subsystems don't start relying on the implementation of the component, thereby preventing the
+manufacturer of the component from changing it to fix flaws or make it work better.Almost all software bugs, are created by
+people who mean well, and just made a mistake. Access control, and it's application to encapsulation that others have so 
+nicely described, are focused only on reducing such inadvertent errors, by reducing cognitive burden, and thereby also
+promoting reusability. This philsophy makes it possible for me to safely use a well written class without understanding
+it's implementation. With access control I can easily tell which methods I am free to call. They are the public ones.
+If cooperative access control were implemented merely with comments, I could not count on the compiler to save me from inadvertent errors. Ref: Quora
