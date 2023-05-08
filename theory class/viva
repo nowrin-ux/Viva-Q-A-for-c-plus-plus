@@ -50,3 +50,6 @@ nicely described, are focused only on reducing such inadvertent errors, by reduc
 promoting reusability. This philsophy makes it possible for me to safely use a well written class without understanding
 it's implementation. With access control I can easily tell which methods I am free to call. They are the public ones.
 If cooperative access control were implemented merely with comments, I could not count on the compiler to save me from inadvertent errors. Ref: Quora
+
+9. Do all virtual functions need to be implemented in derived classes ?
+Answer: Only the pure virtual methods have to be implemented in derived classes but you still need a definition of the other virtual methods.
